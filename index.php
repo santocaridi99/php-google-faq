@@ -77,18 +77,21 @@ $db = [
 </head>
 
 <body>
-    <?php
-    // per ogni topics (array) presente nell'array database
-    // stampo il titolo avendo tag dinamico
-    // dato che paragraphs è un array , faccio un altro for each 
-    // dove stampo un p  per ogni paragrafo presente in paragrapho
-    foreach ($db as $topics) {
-        echo '<'.$topics['titleSize'].'>' . $topics["title"] . '</'.$topics["titleSize"].'>';
-        foreach ($topics["paragraphs"] as $paragraph) {
-            echo '<p>' . $paragraph . '</p>';
+    <div class="container">
+        <?php
+        // per ogni topics (array) presente nell'array database
+        // stampo il titolo avendo tag dinamico
+        // dato che paragraphs è un array , faccio un altro for each 
+        // dove stampo un p  per ogni paragrafo presente in paragrapho
+        foreach ($db as $topics) {
+            echo '<' . $topics['titleSize'] . '>' . $topics["title"] . '</' . $topics["titleSize"] . '>';
+            foreach ($topics["paragraphs"] as $paragraph) {
+                echo '<p>' . $paragraph . '</p>';
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
+
 </body>
 
 </html>
