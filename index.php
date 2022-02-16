@@ -64,3 +64,31 @@ $db = [
         ]
     ]
 ];
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies.google.com</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <?php
+    // per ogni topics (array) presente nell'array database
+    // stampo il titolo avendo tag dinamico
+    // dato che paragraphs è un array , faccio un altro for each 
+    // dove stampo un p  per ogni paragrafo presente in paragrapho
+    foreach ($db as $topics) {
+        echo '<'.$topics['titleSize'].'>' . $topics["title"] . '</'.$topics["titleSize"].'>';
+        foreach ($topics["paragraphs"] as $paragraph) {
+            echo '<p>' . $paragraph . '</p>';
+        }
+    }
+    ?>
+</body>
+
+</html>
